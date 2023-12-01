@@ -1,19 +1,4 @@
 # Import bibliotek
-import importlib.util
-import subprocess
-import sys
-
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-def check_library(library_name):
-    spec = importlib.util.find_spec(library_name)
-    if spec is None:
-        install('nazwa_biblioteki')
-
-# Sprawdzenie, czy konkretna biblioteka jest zainstalowana i jej zainstalowanie (potrzebne do udostępnienia aplikacji przeglądarkowej)
-check_library('matplotlib.pyplot')
-
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
