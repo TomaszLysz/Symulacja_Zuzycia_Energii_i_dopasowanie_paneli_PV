@@ -14,7 +14,7 @@ Sciezka = 'Pliki'
 st.title('Aplikacja dostosowująca skierowanie paneli PV')
 # Nagłowek panelu bocznego
 st.sidebar.header('Wybierz szczegóły symulacji')
-st.sidebar.write(os.listdir(r'Pliki/Ceny rynkowe'))
+#st.sidebar.write(os.listdir(r'Pliki/Ceny rynkowe'))
 # Wybranie symulacji
 Symulacja = {
     '    ':0,

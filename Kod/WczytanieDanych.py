@@ -52,7 +52,7 @@ def WczytanieProdukcjiEnergiiPrzezPanele(Sciezka):
     ListaPlikow = os.listdir(Sciezka)
     # Pętla po każdym z plików pobierająca go i doklejająca do ramki danych
     for i in ListaPlikow:
-        Plik = Sciezka+'\\'+i
+        Plik = Sciezka+'/'+i
         Dane = pd.read_csv(Plik, sep = ',', skiprows = 10, nrows = 26304).drop(['G(i)', 'H_sun', 'T2m', 'WS10m', 'Int'], axis = 1)
         NazwaPliku = i.replace('Timeseries_49.915_21.866_SA2_1kWp_crystSi_14_','').replace('_2018_2020.csv','').replace('_', ' ')
         Dane.columns = ['Data', NazwaPliku]
