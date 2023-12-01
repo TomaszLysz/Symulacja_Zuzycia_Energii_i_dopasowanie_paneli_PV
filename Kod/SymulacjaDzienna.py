@@ -2,7 +2,7 @@
 import pandas as pd
 import random
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 
 # Zdefiniowanie funkcji symulującej zużycie w danym dniu oraz znajdującej najlepsze skierowanie paneli aby cena była najmniejsza a wyprodukowana energia największa
@@ -78,12 +78,12 @@ def Funkcja_Dzienna(Rok, Miesiac, Dzien, Prawdopodobienstwa, printy, Produkcja_C
     # Warunek sprawdzający czy należy wypisać wyniki i stworzyć wykres
     if printy == True:
         # Szczegóły do wykresu
-        plt.plot(Czas, ZuzycieDnia)
-        plt.xlabel('Godzina')
-        plt.ylabel('Zużycie w danej godzinie')
-        plt.title('Wykres zużycia w trakcie jednego dnia')
-        plt.xticks(rotation=45)
-        plt.tight_layout()
+        # plt.plot(Czas, ZuzycieDnia)
+        # plt.xlabel('Godzina')
+        # plt.ylabel('Zużycie w danej godzinie')
+        # plt.title('Wykres zużycia w trakcie jednego dnia')
+        # plt.xticks(rotation=45)
+        # plt.tight_layout()
         # Warunek sprawdzający czy wypisanie wyników ma byćw aplikacji czy terminalu
         if Streamlit == False:
             # Wypisanie wyników i wyświetlenie wykresu
@@ -93,7 +93,7 @@ def Funkcja_Dzienna(Rok, Miesiac, Dzien, Prawdopodobienstwa, printy, Produkcja_C
                 print('Najlepsze skierowania (', len(WspolneSkierowania), ') ogolnie: ', WspolneSkierowania)
             print('Cena za energie tego dnia (bez paneli) wynosi: ', round(CenaDnia,2), ' zl.')
             print('Dzieki uzyciu najlepszego skierowania zaoszczedzimy: ', round(CenaDnia - min(CenaEnergiiZPanelami),2),' zl.')
-            plt.show()
+            # plt.show()
 
         else:
             # Przypisanie do zmiennej wyników oraz zwrócenie jej wraz z wykresem
@@ -107,7 +107,9 @@ def Funkcja_Dzienna(Rok, Miesiac, Dzien, Prawdopodobienstwa, printy, Produkcja_C
                     f'**Cena za energię tego dnia (bez paneli) wynosi: {round(CenaDnia, 2)} zł.**\n\n'
                     f'**Dzięki użyciu najlepszego skierowania zaoszczędzimy: {round(CenaDnia - min(CenaEnergiiZPanelami), 2)} zł.**'
             )
+            plt = 'xD'
             return(plt, Rezultat)
+            
 
     else:
         # Zwrócenie danych z funkcji

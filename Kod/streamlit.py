@@ -1,7 +1,7 @@
 # Import bibliotek
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import calendar
 from datetime import datetime
 import main
@@ -47,7 +47,7 @@ if Wybrana_Symulacja == 'Dzienna' or Wybrana_Symulacja == 'Roczna':
             current_time = datetime.now().strftime("%H:%M:%S")
             st.write('Koniec funkcji: ', current_time)
             st.markdown(Rezultat)
-            st.pyplot(plt)
+            # st.pyplot(plt)
             
     elif Wybrana_Symulacja == 'Roczna':
         selected_month = 'o'
@@ -60,7 +60,7 @@ if Wybrana_Symulacja == 'Dzienna' or Wybrana_Symulacja == 'Roczna':
             current_time = datetime.now().strftime("%H:%M:%S")
             st.write('Koniec funkcji: ', current_time)
             st.markdown(Rezultat)
-            st.pyplot(plt)
+            # st.pyplot(plt)
 else:
     data = None
 

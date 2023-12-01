@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 import SymulacjaDzienna
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
     
 
 
@@ -80,13 +80,13 @@ def Funkcja_roczna(Rok, printy, Kolumny_Produkcji, PrawdopodobienstwaWiosna, Pra
     # Warunek sprawdzający w jaki sposób wypisać wyniki
     if printy == True:
         # Przygotowanie danych do wykresu
-        plt.plot(Dni.strftime('%Y-%m-%d'), ZuzycieDnia)
-        plt.xlabel('Dzień')
-        plt.ylabel('Zużycie w danym dniu')
-        plt.title('Wykres zużycia w trakcie całego roku')
-        etykiety_dni = [Rok + '-01-01', Rok + '-02-01', Rok + '-03-01', Rok + '-04-01', Rok + '-05-01', Rok + '-06-01', Rok + '-07-01', Rok + '-08-01', Rok + '-09-01', Rok + '-10-01', Rok + '-11-01', Rok + '-12-01']
-        plt.xticks(etykiety_dni, rotation=45)
-        plt.tight_layout()
+        # plt.plot(Dni.strftime('%Y-%m-%d'), ZuzycieDnia)
+        # plt.xlabel('Dzień')
+        # plt.ylabel('Zużycie w danym dniu')
+        # plt.title('Wykres zużycia w trakcie całego roku')
+        # etykiety_dni = [Rok + '-01-01', Rok + '-02-01', Rok + '-03-01', Rok + '-04-01', Rok + '-05-01', Rok + '-06-01', Rok + '-07-01', Rok + '-08-01', Rok + '-09-01', Rok + '-10-01', Rok + '-11-01', Rok + '-12-01']
+        # plt.xticks(etykiety_dni, rotation=45)
+        # plt.tight_layout()
         # Warunek sprawdzający czy wynik ma być wypisany w terminalu czy w aplikacji przeglądarkowej
         if Streamlit == True:
             # Stworzenie zmiennej zawierającej wynik
@@ -101,7 +101,10 @@ def Funkcja_roczna(Rok, printy, Kolumny_Produkcji, PrawdopodobienstwaWiosna, Pra
                 f'**Dzieki uzyciu najlepszego skierowania zaoszczedzimy: {round(CenaRoku - min(CenaEnergiiZPanelamiWRoku),2)} zl.**\n'
                                     )
             # Zwrócenie z funkcji wykresu oraz zmiennej z wynikiem
+            plt = 'xd'
             return(plt, Rezultat)
+            
+            
         else:
             # Wypisanie zmiennych w terminalu oraz jeśli to możliwe wykresu
             print('Najlepsze skierowania (', len(SkierowaniaNaNajmniejZuzytejEnergii), ') paneli ze wzgledu na najmniej energii pobranej z sieci: ', SkierowaniaNaNajmniejZuzytejEnergii)
@@ -110,7 +113,7 @@ def Funkcja_roczna(Rok, printy, Kolumny_Produkcji, PrawdopodobienstwaWiosna, Pra
                 print('Najlepsze skierowania (', len(WspolneSkierowania), ') ogolnie: ', WspolneSkierowania)
             print('Cena za energie tego roku (bez paneli) wynosi: ', round(CenaRoku,2), ' zl.')
             print('Dzieki uzyciu najlepszego skierowania zaoszczedzimy: ', round(CenaRoku - min(CenaEnergiiZPanelamiWRoku),2),' zl.')
-            plt.show()
+            # plt.show()
     else:
         # Wypisanie krótkich wyników
         if len(WspolneSkierowania) != 0:
