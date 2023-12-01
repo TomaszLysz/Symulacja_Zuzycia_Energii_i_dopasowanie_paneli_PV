@@ -12,7 +12,7 @@ def WczytanieCenyEnergii(Sciezka):
     ListaPlikow = os.listdir(Sciezka)
     # Pętla po każdym z plików pobierająca go i doklejająca do ramki danych
     for i in ListaPlikow:
-        Plik = Sciezka + '\\' + i
+        Plik = Sciezka + '/' + i
         Dane = pd.read_csv(Plik, sep = ';', encoding = 'latin-1')
         Dane.columns = ['Data', 'Godzina', 'Cena']
         if i == ListaPlikow[0]:
