@@ -14,7 +14,7 @@ Sciezka = r'TomaszLysz/Symulacja_Zuzycia_Energii_i_dopasowanie_paneli_PV/tree/ma
 st.title('Aplikacja dostosowująca skierowanie paneli PV')
 # Nagłowek panelu bocznego
 st.sidebar.header('Wybierz szczegóły symulacji')
-st.sidebar.write(os.listdir())
+st.sidebar.write(os.listdir('/Pliki'))
 # Wybranie symulacji
 Symulacja = {
     '    ':0,
