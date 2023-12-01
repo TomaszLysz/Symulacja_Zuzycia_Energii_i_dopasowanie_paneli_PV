@@ -7,7 +7,7 @@ from datetime import datetime
 import main
 
 # Zdefiniowanie ścieżki z plikami
-Sciezka = r'E:\STUDIA\Inzynierka - Python\Pliki'
+Sciezka = r'TomaszLysz/Symulacja_Zuzycia_Energii_i_dopasowanie_paneli_PV/tree/main'
 
 # Nagłówek aplikacji
 st.title('Aplikacja dostosowująca skierowanie paneli PV')
