@@ -7,7 +7,7 @@ import pandas as pd
 # Funkcja przyjmuje tylko jeden argument który jest ścieżką do głównego folderu z plikami
 def WczytanieCenyEnergii(Sciezka):
     # Uzupełnienie ścieżki o odpowiedni folder
-    Sciezka = Sciezka + r'\Ceny rynkowe'
+    Sciezka = Sciezka + r'/Ceny rynkowe'
     # Pobranie listy plików w folderze
     ListaPlikow = os.listdir(Sciezka)
     # Pętla po każdym z plików pobierająca go i doklejająca do ramki danych
@@ -47,7 +47,7 @@ def WczytanieCenyEnergii(Sciezka):
 # Funkcja przyjmuję jeden argument którym jest ścieżka do ogólnego folderu z plikami
 def WczytanieProdukcjiEnergiiPrzezPanele(Sciezka):
     # Uzupełnienie ścieżki o odpowiedni folder
-    Sciezka = Sciezka + r'\Hourly radiaton data'
+    Sciezka = Sciezka + r'/Hourly radiaton data'
     # Pobranie listy plików w folderze
     ListaPlikow = os.listdir(Sciezka)
     # Pętla po każdym z plików pobierająca go i doklejająca do ramki danych
@@ -69,16 +69,16 @@ def WczytanieProdukcjiEnergiiPrzezPanele(Sciezka):
 # Funkcja przyjmuje trzy argumenty: Scieżka do ogólnego folderu z plikami, Tryb czyli czy symulacja jest roczna czy dzienna oraz Model czyli który model zużycia energii jest wczytywany
 def WczytaniePrawdopodobienstwaUrzadzen(Sciezka, Tryb, Model):
     # Uzupełnienie ścieżki o odpowiedni folder
-    Sciezka = Sciezka + r'\Urzadzenia'
+    Sciezka = Sciezka + r'/Urzadzenia'
     # Sprawdzenie Trybu
     if Tryb == True:
         # Sprawdzenie modelu a następnie uzupełnienie ścieżki o odpowiednią nazwę pliku
         if Model == '1':
-            Sciezka = Sciezka + r'\Urzadzenia1.csv'
+            Sciezka = Sciezka + r'/Urzadzenia1.csv'
         elif Model == '2':
-            Sciezka = Sciezka + r'\Urzadzenia2.csv'
+            Sciezka = Sciezka + r'/Urzadzenia2.csv'
         elif Model == '3':
-            Sciezka = Sciezka + r'\Urzadzenia3.csv'
+            Sciezka = Sciezka + r'/Urzadzenia3.csv'
         # Wczytanie plików    
         Prawdopodobienstwa = pd.read_csv(Sciezka, sep = ',', skiprows = 2)
         Zuzycie = pd.read_csv(Sciezka, sep = ',', nrows = 1)
@@ -88,11 +88,11 @@ def WczytaniePrawdopodobienstwaUrzadzen(Sciezka, Tryb, Model):
     elif Tryb == False:
         # Sprawdzenie modelu a następnie uzupełnienie ścieżki o odpowiednią nazwę pliku
         if Model == '1':
-            ModelZuzyc = r'\Urzadzenia1'
+            ModelZuzyc = r'/Urzadzenia1'
         elif Model == '2':
-            ModelZuzyc = r'\Urzadzenia2'
+            ModelZuzyc = r'/Urzadzenia2'
         elif Model == '3':
-            ModelZuzyc = r'\Urzadzenia3'
+            ModelZuzyc = r'/Urzadzenia3'
         ULato = ModelZuzyc + r' — Lato.csv'
         UWiosJes = ModelZuzyc+  r' — Wiosna i Jesien.csv'
         UZima = ModelZuzyc + r' — Zima.csv'
