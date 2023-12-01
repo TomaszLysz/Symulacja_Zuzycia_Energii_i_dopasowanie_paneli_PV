@@ -8,13 +8,13 @@ import os
 import main
 
 # Zdefiniowanie ścieżki z plikami
-Sciezka = r'TomaszLysz/Symulacja_Zuzycia_Energii_i_dopasowanie_paneli_PV/tree/main'
+Sciezka = 'Pliki'
 
 # Nagłówek aplikacji
 st.title('Aplikacja dostosowująca skierowanie paneli PV')
 # Nagłowek panelu bocznego
 st.sidebar.header('Wybierz szczegóły symulacji')
-st.sidebar.write(os.listdir('Pliki'))
+st.sidebar.write(os.listdir(r'Pliki/Ceny rynkowe'))
 # Wybranie symulacji
 Symulacja = {
     '    ':0,
