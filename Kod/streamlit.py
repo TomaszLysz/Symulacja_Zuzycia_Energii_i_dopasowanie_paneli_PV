@@ -25,8 +25,8 @@ Wybrana_Symulacja = st.sidebar.selectbox('Wybierz symulację:', list(Symulacja.k
 # Panel boczny zależny od wybranej symulacji
 if Wybrana_Symulacja == 'Dzienna' or Wybrana_Symulacja == 'Roczna':
     if st.sidebar.button('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Szczegóły modeli zużycia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'):
-            st.write('Model 1: Model domu jednorodzinnego niedostosowanego do zużycia energii w trakcie jej produkcji przez panele fotowoltaiczne. \n\n Model 2: Model domu jednorodzinnego dostosowanego do użycia energii wraz z jej produkcją przez panele fotowoltaiczne. \n\n Model 3: Model firmy z wysokim zużyciem energii w trakcie dnia (2 - zmianowy tryb pracy).')
-    Model = st.sidebar.selectbox('Wybierz model zużycia:', ['1', '2', '3'])
+            st.write('Model 1: Model domu jednorodzinnego niedostosowanego do zużycia energii w trakcie jej produkcji przez panele fotowoltaiczne. \n\n Model 2: Model domu jednorodzinnego dostosowanego do użycia energii wraz z jej produkcją przez panele fotowoltaiczne.')
+    Model = st.sidebar.selectbox('Wybierz model zużycia:', ['1', '2'])
     selected_year = st.sidebar.selectbox('Wybierz rok:', ['2018', '2019', '2020'])
     if Wybrana_Symulacja == 'Dzienna':
         selected_month = st.sidebar.selectbox('Wybierz miesiąc:', ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'])

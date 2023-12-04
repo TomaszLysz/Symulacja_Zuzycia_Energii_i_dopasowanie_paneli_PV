@@ -77,8 +77,6 @@ def WczytaniePrawdopodobienstwaUrzadzen(Sciezka, Tryb, Model):
             Sciezka = Sciezka + r'/Urzadzenia1.csv'
         elif Model == '2':
             Sciezka = Sciezka + r'/Urzadzenia2.csv'
-        elif Model == '3':
-            Sciezka = Sciezka + r'/Urzadzenia3.csv'
         # Wczytanie plików    
         Prawdopodobienstwa = pd.read_csv(Sciezka, sep = ',', skiprows = 2)
         Zuzycie = pd.read_csv(Sciezka, sep = ',', nrows = 1)
@@ -91,8 +89,6 @@ def WczytaniePrawdopodobienstwaUrzadzen(Sciezka, Tryb, Model):
             ModelZuzyc = r'/Urzadzenia1'
         elif Model == '2':
             ModelZuzyc = r'/Urzadzenia2'
-        elif Model == '3':
-            ModelZuzyc = r'/Urzadzenia3'
         ULato = ModelZuzyc + r' — Lato.csv'
         UWiosJes = ModelZuzyc+  r' — Wiosna i Jesien.csv'
         UZima = ModelZuzyc + r' — Zima.csv'
@@ -112,6 +108,8 @@ def OperacjeNaDanych(CenaPradu, WyprodukowanaEnergia):
     Produkcja_Ceny = pd.concat([CenaPradu['Cena'], WyprodukowanaEnergia], axis = 1)
     # Wczytanie nazw skierowań do listy
     Kolumny_Produkcji = WyprodukowanaEnergia.columns[1:].tolist()
+    # Operacje dostosowujące jednostkę danych
+    Produkcja_Ceny[Kolumny_Produkcji] = Produkcja_Ceny[Kolumny_Produkcji]/1000 * 10
     # Dodanie dwóch kolumn do ramki danych
     Produkcja_Ceny = Produkcja_Ceny[['Data', 'Cena'] + Kolumny_Produkcji]
     # Zwrócenie z funkcji połączonej ramki danych oraz listy z nazwami skierowań
